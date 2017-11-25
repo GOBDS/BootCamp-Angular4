@@ -1,0 +1,5 @@
+<li class="list-group-item" [ngClass]="{'my-message': minhaMensagem()}">
+  <p>{{ mensagem.author }}</p>
+  <p>{{ mensagem.message }}</p>
+  <p>{{ mensagem.time | date: 'hh:mm a'}}</p>
+</li>
