@@ -1,7 +1,7 @@
 import { mensagemModel } from './model/mensagem.model';
 import { mensagemServerModule } from './model/mensagem-server.model';
 import { ChatService } from './chat.service';
-import { Component, OnInit, ElementRef, ViewChild, AfterViewInit, AfterViewChecked } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild, AfterViewInit, AfterViewChecked, OnDestroy } from '@angular/core';
 
 import { ReplaySubject, Observable, Scheduler } from 'rxjs/Rx';
 
@@ -10,7 +10,7 @@ import { ReplaySubject, Observable, Scheduler } from 'rxjs/Rx';
   templateUrl: './chat.component.html',
   styleUrls: ['./chat.component.css']
 })
-export class ChatComponent implements OnInit, AfterViewInit, AfterViewChecked {
+export class ChatComponent implements OnInit, AfterViewInit, AfterViewChecked, OnDestroy {
   public mensagems: mensagemModel[] = [];
   public mensagemInserir: string;
   public subject = new ReplaySubject<mensagemModel[]>(2);
@@ -47,6 +47,11 @@ export class ChatComponent implements OnInit, AfterViewInit, AfterViewChecked {
       this.enviaMensagem();
     }
   }
+
+  public ngOnDestroy(): void {
+    this._chatService.getSubject().unsubscribe();
+  }
+
   private scrollToBottom(): void {
     this.scrollContainer.nativeElement.scrollTop = this.scrollContainer.nativeElement.scrollHeight;
   }
