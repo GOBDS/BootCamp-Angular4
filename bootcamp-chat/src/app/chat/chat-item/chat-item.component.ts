@@ -12,13 +12,13 @@ export class ChatItemComponent implements OnInit {
   @Input() public mensagem: mensagemModel;
 
   constructor(private _chatService: ChatService) {
-   }
+  }
 
   public ngOnInit(): void {
   }
 
   public minhaMensagem(): boolean {
-    return (this.mensagem.author == this._chatService.usuario);
+    return (this.mensagem.author === this._chatService.usuario);
   }
 
 }

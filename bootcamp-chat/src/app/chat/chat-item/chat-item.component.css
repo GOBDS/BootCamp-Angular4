@@ -1,3 +1,24 @@
-.my-message{
-    background-color: lightblue;
+.my-message {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.my-message>li {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 60%;
+  margin: 5px;
+  background-color: lightgreen;
+}
+
+.message {
+  display: flex;
+  flex-direction: row;
+  margin: 5px;
+}
+
+.message>li {
+  width: 60%;
+  background-color: lightgray;
 }

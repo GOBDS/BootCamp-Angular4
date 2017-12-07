@@ -6,7 +6,7 @@ const appRoutes: Routes = [
     { path: '', component: ChatComponent },
     { path: 'chat', component: ChatComponent },
     { path: 'sobre', component: SobreComponent },
-    { path: '**', component:ChatComponent}
-]
+    { path: '**', component: ChatComponent}
+];
 
 export const routing = RouterModule.forRoot(appRoutes);

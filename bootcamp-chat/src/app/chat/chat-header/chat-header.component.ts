@@ -14,9 +14,15 @@ export class ChatHeaderComponent implements OnInit {
   constructor(private _chatService: ChatService) {
     this.usuario = this._chatService.usuario;
     this.logTime = this._chatService.logTime;
-   }
+  }
 
-  ngOnInit() {
+  public ngOnInit(): void {
+  }
+
+  public logout(): void {
+    localStorage.clear();
+    sessionStorage.clear();
+    location.reload();
   }
 
 }

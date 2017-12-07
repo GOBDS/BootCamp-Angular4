@@ -1,8 +1,10 @@
-    <ul class="messageList list-group" #scrollMe> 
-        <app-chat-item *ngFor="let mensagemobj of mensagems" 
-        [mensagem]="mensagemobj"></app-chat-item>
-    </ul>
+<div (keydown)="teclaEnter($event)">
+  <ul class="messageList list-group" #scrollMe>
+    <app-chat-item *ngFor="let mensagemobj of mensagems" [mensagem]="mensagemobj"></app-chat-item>
+  </ul>
 
-  <textarea placeholder="Escreva sua mensagem aqui..." rows="5" [(ngModel)]="mensagemInserir"></textarea>
+  <textarea placeholder="Escreva sua mensagem aqui..." class="form-control" rows="3" [(ngModel)]="mensagemInserir"></textarea>
+  <p>{{ mensagemInserir?.length }}</p>
 
-  <button class="btn btn-primary" (click)="enviaMensagem()" >Enviar</button>
+  <button class="btn btn-primary" (click)="enviaMensagem()">Enviar</button>
+</div>

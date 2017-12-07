@@ -1,8 +1,25 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="/assets/img/vnt_logo.png" width="40" height="40" class="d-inline-block align-top">
+    </a>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+      <ul class="nav nav-tabs">
+        <li class="nav-item nav-link">
+          <a routerLink="/chat" routerLinkActive="active">Chat</a>
+        </li>
+        <li class="nav-item nav-link">
+          <a routerLink="/sobre" routerLinkActive="active">Sobre</a>
+        </li>
+        <div class="flexcontainer">
+          <button class="btn btn-outline-success my-2 my-sm-0" (click)="logout()">Logout</button>
+        </div>
+      </ul>
+    </div>
+  </div>
+</nav>
 <div class="jumbotron">
-    <h1>Chat Bootcamp</h1>
-    <p>Bem vindo {{ usuario }} !!!</p>
-    <p>{{ logTime | date:'dd/MM/yy hh:mm a'}}</p>
-
-    <a [routerLink]="'/chat'">Chat</a>
-    <a [routerLink]="'/sobre'">Sobre</a>
+  <h1 class="display-3">Chat Bootcamp</h1>
+  <p class="lead">Bem vindo {{ usuario }} !!!</p>
+  <p class="lead">{{ logTime | date:'dd/MM/yy hh:mm a'}}</p>
 </div>

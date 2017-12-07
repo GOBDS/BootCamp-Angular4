@@ -1,3 +1,26 @@
+.jumbotron {
+  background-color: #1abc9c;
+  color: white;
+}
+
 .jumbotron h1 {
-    text-align: center;
+  text-align: center;
+}
+
+.flexcontainer {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.navbar {
+  background-color: #1abc9c;
+  margin-bottom: -5px;
+}
+
+ul {
+  margin: 10px;
+}
+
+a {
+  color: white;
 }
